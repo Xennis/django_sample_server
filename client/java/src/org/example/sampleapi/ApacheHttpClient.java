@@ -1,0 +1,118 @@
+package org.example.sampleapi;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ConnectException;
+import java.net.HttpURLConnection;
+
+import org.apache.http.HttpHeaders;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
+
+/**
+ * This class is used for JSON GET and POST communication wit an Apache HTTP
+ * server.
+ * 
+ * It requires:
+ *   Apache HttpComponents "HttpClient" - http://hc.apache.org/downloads.cgi
+ */
+public class ApacheHttpClient {
+	
+	/**
+	 * Do a HTTP GET request and return the result.
+	 * 
+	 * @param uri
+	 *            URI for HTTP GET request
+	 * @param authorization
+	 *            Empty or authorization header
+	 * @return Response
+	 * @throws RuntimeException
+	 *             When status code is not HTTP_OK
+	 */
+	public static String httpGet(String uri, String authorization) throws RuntimeException {
+		StringBuilder result = new StringBuilder();
+		HttpClient httpClient = HttpClientBuilder.create().build();
+
+		try {
+			HttpGet getRequest = new HttpGet(uri);
+			if (!authorization.isEmpty()) {
+				getRequest.addHeader(HttpHeaders.AUTHORIZATION, authorization);
+			}
+			getRequest.addHeader(HttpHeaders.ACCEPT, "application/json");
+
+			HttpResponse response = httpClient.execute(getRequest);
+			
+			int statusCode = response.getStatusLine().getStatusCode();
+			if (statusCode != HttpURLConnection.HTTP_OK) {
+				throw new RuntimeException("ERROR: HTTP code: " + statusCode);
+			}
+
+			BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent())));
+			
+			String line = "";
+			while((line = br.readLine()) != null){
+				result.append(line);
+			}
+			br.close();
+
+		} catch (ConnectException e) {
+			System.err.println("ConnectException: " + e.getMessage());
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			httpClient.getConnectionManager().shutdown();
+		}
+		
+		return result.toString();
+	}
+	
+	/**
+	 * Do a HTTT POST request and return the status code.
+	 * 
+	 * @param uri
+	 *            URI for HTTP POST request
+	 * @param authorization
+	 *            Empty or authorization header
+	 * @param stringEntity
+	 *            String entity which will be posted
+	 * @return True, when request was successful
+	 * @throws RuntimeException
+	 *             When status code is not HTTP_CREATED
+	 */
+	public static boolean httpPost(String uri, String authorization, String stringEntity) throws RuntimeException {
+		HttpClient httpClient = HttpClientBuilder.create().build();
+		
+		try {
+			HttpPost postRequest = new HttpPost(uri);
+			if (!authorization.isEmpty()) {
+				postRequest.addHeader(HttpHeaders.AUTHORIZATION, authorization);
+			}
+			
+			StringEntity ent = new StringEntity(stringEntity);
+			ent.setContentType("application/json");
+			postRequest.setEntity(ent);
+			
+			HttpResponse response = httpClient.execute(postRequest);
+			
+			int statusCode = response.getStatusLine().getStatusCode();			
+			if (statusCode != HttpURLConnection.HTTP_CREATED) {
+				throw new RuntimeException("ERROR: HTTP code: " + statusCode);
+			}
+			
+			return true;
+
+		} catch (IOException e) {
+			e.printStackTrace();			
+		} finally {
+			httpClient.getConnectionManager().shutdown();
+		}
+		
+		return false;
+	}
+
+}

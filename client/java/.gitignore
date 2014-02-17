@@ -1,0 +1,21 @@
+############
+## Java
+############
+ 
+# Compiled object files
+*.class
+
+############
+## Eclipse
+############
+
+.settings/
+.project
+.classpath
+bin/
+
+############
+## Custom
+############
+
+lib/
