@@ -1,0 +1,15 @@
+############
+## Python
+############
+*.pyc
+
+############
+## Django
+############
+
+#settings.py
+
+# Database
+*.sqlite3
+# Log files
+*.log
