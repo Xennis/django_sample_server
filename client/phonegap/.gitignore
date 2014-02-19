@@ -1,0 +1,26 @@
+############
+## PhoneGap
+############
+
+.cordova/
+hooks/
+merges/
+platforms/
+plugins/
+
+############
+## Netbeans
+############
+
+nbproject/
+
+############
+## Custom
+############
+
+www/js/libs/
+www/res/
+www/spec
+www/icon.png
+spec.html
+./config.xml
