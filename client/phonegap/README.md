@@ -1,10 +1,12 @@
 # Django sample server
 
-## PhoneGap REST/JSON client
+## PhoneGap REST/JSON client with jQuery (Mobile) and OAuth2
 
 ### Used software
 
-* [PhoneGap](http://phonegap.com)
+* [PhoneGap](http://phonegap.com) (v.3.3)
+* [jQuery](http://jquery.com) (v.1.9)
+* [jQuery Mobile](http://jquerymobile.com/) (v.1.4)
 
 
 ### Build and run
