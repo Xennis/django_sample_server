@@ -3,10 +3,12 @@
 ############
 
 .cordova/
+config/
 hooks/
 merges/
 platforms/
 plugins/
+test/
 
 ############
 ## Netbeans
@@ -18,9 +20,7 @@ nbproject/
 ## Custom
 ############
 
-www/js/libs/
 www/res/
 www/spec
 www/icon.png
 spec.html
-./config.xml

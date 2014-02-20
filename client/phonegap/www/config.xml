@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">	
-    <name>HelloWorld</name>
+    <name>PhoneGap REST/JSON client</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        PhoneGap REST/JSON client
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="support@phonegap.com" href="http://github.com/Xennis/django_sample_server">
+        Xennis
     </author>
     <access origin="*"/>
     <preference name="fullscreen" value="true"/>
     <preference name="webviewbounce" value="true"/>
 
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
     <!--
     <feature name="http://api.phonegap.com/1.0/device" />
     <preference name="permissions" value="none" />
