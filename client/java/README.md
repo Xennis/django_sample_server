@@ -14,14 +14,24 @@ Used Java libraries
 
 ### Run
 
-1. Included the necessary JARs in the Java build path
+Necessary JARs in the Java build path
 
-    * gson/gson-2.2.4.jar
-    * httpcomponents-client/lib/
-        * commons-logging-1.1.3.jar
-        * httpclient-4.3.2.jar
-        * httpcore-4.3.1.jar
-    * java-json/java-json.jar
+* gson/gson-2.2.4.jar
+* httpcomponents-client/lib/
+    * commons-logging-1.1.3.jar
+    * httpclient-4.3.2.jar
+    * httpcore-4.3.1.jar
+* java-json/java-json.jar
+    
 
-2. Compile all Java classes
-3. Run `java Main`
+[Apache Ant](http://ant.apache.org) is required to use the [build.xml](build.xm) to build and run the project:
+
+```
+# Print project help information
+ant -p
+# Clean, build and run the project
+ant
+# Compile only
+ant compile
+```
+
