@@ -41,6 +41,8 @@ INSTALLED_APPS = (
     'sample_server',
     # Tastypie
     'tastypie',
+    # Swagger
+    'tastypie_swagger',
     # OAuth2
     'provider',
     'provider.oauth2',
@@ -132,3 +134,7 @@ LOGGING = {
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 TASTYPIE_DEFAULT_FORMATS = ['json']
+
+
+
+TASTYPIE_SWAGGER_API_MODULE = 'sample_server.urls.api'

@@ -1,6 +1,6 @@
 # Django sample server
 
-## JavaScript jQuery REST/JSON client with OAtuh2 (and jQueryMobile UI)
+## JavaScript jQuery REST/JSON client with OAuth2 (and jQueryMobile UI)
 
 ### Used software
 

@@ -9,6 +9,7 @@ For details see [requirements.txt](requirements.txt)!
 * [Django](http://www.djangoproject.com/) (v.1.6)
     * [Tastypie](http://django-tastypie.readthedocs.org/) REST API (`django-tastypie`)
     * [OAuth2](http://django-oauth2-provider.readthedocs.org) (`django-oauth2-provider`)
+    * [Tastypie Swagger](https://github.com/minism/django-tastypie-swagger) (`django-tastypie-swagger`)
 
 Used files
 
