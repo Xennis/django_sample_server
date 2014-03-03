@@ -16,7 +16,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 /**
- * This class is used for JSON GET and POST communication wit an Apache HTTP
+ * This class is used for GET and POST communication wit an Apache HTTP
  * server.
  * 
  * It requires:
@@ -33,7 +33,7 @@ public class ApacheHttpClient {
 	 *            Empty or header accept
 	 * @param headerAuthorization
 	 *            Empty or authorization header
-	 * @return Response
+	 * @return Response (content of the received entity)
 	 * @throws RuntimeException
 	 *             When status code is not HTTP_OK
 	 */

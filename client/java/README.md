@@ -12,6 +12,10 @@ Used Java libraries
 * [Google Gson](https://code.google.com/p/google-gson/downloads) (v.2.2.4)
 * [JSON-java](https://github.com/douglascrockford/JSON-java)
 
+Used files
+
+* [ApacheHttpClient.java](http://gist.github.com/Xennis/9263251) by [Xennis](http://gist.github.com/Xennis)  (`src/org/example/sampleapi/ApacheHttpClient.java`)
+
 ### Run
 
 Necessary JARs in the Java build path

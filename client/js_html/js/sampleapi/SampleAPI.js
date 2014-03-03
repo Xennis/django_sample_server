@@ -30,9 +30,11 @@ var SampleAPI = function() {
         console.log("receive: " + completeMessage);
         $("#getResult").text(completeMessage);
 
+        $('#locationList li').remove();
         $.each( data.objects, function( i, item ) {
-          $("#locations").append("<li>" + item.latitude + ", " + item.longitude + ": " + item.altitude + "</li>");
+          $("#locationList").append("<li>" + item.latitude + ", " + item.longitude + ": " + item.altitude + "</li>");
         });
+        $("#locationList").listview("refresh");
       },
       function (jqXHR, textStatus) {
         var completeMessage = textStatus + " " + jqXHR.status + " " + jqXHR.statusText;
