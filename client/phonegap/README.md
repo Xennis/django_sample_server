@@ -5,7 +5,7 @@
 ### Used software
 
 * [PhoneGap](http://phonegap.com) (v.3.3)
-* [jQuery](http://jquery.com) (v.1.9)
+* [jQuery](http://jquery.com) (v.1.10)
 * [jQuery Mobile](http://jquerymobile.com/) (v.1.4)
 
 
