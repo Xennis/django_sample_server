@@ -11,11 +11,12 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 /**
- * This class is used for JSON GET and POST communication wit an Apache HTTP
+ * This class is used for GET and POST communication wit an Apache HTTP
  * server.
  * 
  * It requires:
@@ -28,23 +29,26 @@ public class ApacheHttpClient {
 	 * 
 	 * @param uri
 	 *            URI for HTTP GET request
-	 * @param authorization
+	 * @param headerAccept
+	 *            Empty or header accept
+	 * @param headerAuthorization
 	 *            Empty or authorization header
-	 * @return Response
+	 * @return Response (content of the received entity)
 	 * @throws RuntimeException
 	 *             When status code is not HTTP_OK
 	 */
-	public static String httpGet(String uri, String authorization) throws RuntimeException {
+	public static String httpGet(String uri, String headerAccept, String headerAuthorization) throws RuntimeException {
 		StringBuilder result = new StringBuilder();
 		HttpClient httpClient = HttpClientBuilder.create().build();
 
 		try {
 			HttpGet getRequest = new HttpGet(uri);
-			if (!authorization.isEmpty()) {
-				getRequest.addHeader(HttpHeaders.AUTHORIZATION, authorization);
+			if (!headerAccept.isEmpty()) {
+				getRequest.addHeader(HttpHeaders.ACCEPT, headerAccept);				
 			}
-			getRequest.addHeader(HttpHeaders.ACCEPT, "application/json");
-
+			if (!headerAuthorization.isEmpty()) {
+				getRequest.addHeader(HttpHeaders.AUTHORIZATION, headerAuthorization);
+			}
 			HttpResponse response = httpClient.execute(getRequest);
 			
 			int statusCode = response.getStatusLine().getStatusCode();
@@ -76,25 +80,29 @@ public class ApacheHttpClient {
 	 * 
 	 * @param uri
 	 *            URI for HTTP POST request
-	 * @param authorization
+	 * @param headerAuthorization
 	 *            Empty or authorization header
 	 * @param stringEntity
 	 *            String entity which will be posted
+	 * @param entityConentType
+	 *            Empty or entity content type
 	 * @return True, when request was successful
 	 * @throws RuntimeException
 	 *             When status code is not HTTP_CREATED
 	 */
-	public static boolean httpPost(String uri, String authorization, String stringEntity) throws RuntimeException {
+	public static boolean httpPost(String uri, String headerAuthorization, String stringEntity, ContentType entityConentType) throws RuntimeException {
 		HttpClient httpClient = HttpClientBuilder.create().build();
 		
 		try {
 			HttpPost postRequest = new HttpPost(uri);
-			if (!authorization.isEmpty()) {
-				postRequest.addHeader(HttpHeaders.AUTHORIZATION, authorization);
+			if (!headerAuthorization.isEmpty()) {
+				postRequest.addHeader(HttpHeaders.AUTHORIZATION, headerAuthorization);
 			}
 			
 			StringEntity ent = new StringEntity(stringEntity);
-			ent.setContentType("application/json");
+			if (entityConentType != null) {
+				ent.setContentType(entityConentType.toString());
+			}
 			postRequest.setEntity(ent);
 			
 			HttpResponse response = httpClient.execute(postRequest);

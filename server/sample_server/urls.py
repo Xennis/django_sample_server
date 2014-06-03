@@ -20,4 +20,6 @@ urlpatterns = patterns('',
     url(r'^api/', include(api.urls)),
     # OAuth2
     url(r'^oauth2/', include('provider.oauth2.urls', namespace = 'oauth2')),
+    # Swagger
+    url(r'api/doc/', include('tastypie_swagger.urls', namespace='tastypie_swagger')),
 )

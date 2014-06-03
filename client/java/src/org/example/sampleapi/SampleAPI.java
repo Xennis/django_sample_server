@@ -3,6 +3,7 @@ package org.example.sampleapi;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.entity.ContentType;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,7 +34,7 @@ public class SampleAPI {
 
 		List<Location> locationList = new ArrayList<Location>();
 		try {
-			String result = ApacheHttpClient.httpGet(API_URL + Location.ressourceName + "/", "OAuth " + ACCESS_TOKEN);
+			String result = ApacheHttpClient.httpGet(API_URL + Location.ressourceName + "/", "application/json", "OAuth " + ACCESS_TOKEN);
 
 			JSONArray ar = new JSONObject(result).getJSONArray("objects");
 			Gson gsonBuilder = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
@@ -51,7 +52,7 @@ public class SampleAPI {
 	public boolean postLocation(Location location) {
 		try {
 			String stringEntity = new Gson().toJson(location);
-			return ApacheHttpClient.httpPost(API_URL + Location.ressourceName + "/", "OAuth " + ACCESS_TOKEN, stringEntity);
+			return ApacheHttpClient.httpPost(API_URL + Location.ressourceName + "/", "OAuth " + ACCESS_TOKEN, stringEntity, ContentType.APPLICATION_JSON);
 		} catch (RuntimeException e) {
 			System.err.println(e.getClass().getName() + " " + e.getMessage());
 		}
