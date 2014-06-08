@@ -14,7 +14,7 @@ For details see [requirements.txt](requirements.txt)!
 Used files
 
 * [OAuth 2.0 authentication model for Tastypie](http://github.com/ianalexander/django-oauth2-tastypie) by [Ian Alexander](http://github.com/ianalexander) (`sample_server/authentication.py`)
-* [Django middleware for cross-domain XHR](http://gist.github.com/strogonoff/1369619) by  [strogonoff](https://github.com/strogonoff) (`sample_server/django-crossdomainxhr-middleware.py`)
+* [Django middleware for cross-domain XHR](http://gist.github.com/strogonoff/1369619) by [strogonoff](https://github.com/strogonoff) (`sample_server/django-crossdomainxhr-middleware.py`)
 
 ### Run
 
@@ -23,6 +23,8 @@ Used files
     Admin site: [http://localhost:8000/admin/](http://localhost:8000/admin/)
 
     API: [http://localhost:8000/api/v1/](http://localhost:8000/api/v1/)
+
+    API documenation: [http://localhost:8000/api/doc/](http://localhost:8000/api/doc/)
 
 2. Create sample data
 
