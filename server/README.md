@@ -18,15 +18,17 @@ Used files
 
 ### Run
 
-1. Run server `python manage.py runserver`
+1. Create database tables and a superuser `python manage.py syncdb`
+
+2. Run server `python manage.py runserver`
 
     Admin site: [http://localhost:8000/admin/](http://localhost:8000/admin/)
 
     API: [http://localhost:8000/api/v1/](http://localhost:8000/api/v1/)
 
-2. Create sample data
+3. Create sample data
 
-3. Run one of the [clients](../client/)
+4. Run one of the [clients](../client/)
 
 
 ## Notes
