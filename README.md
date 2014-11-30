@@ -1,6 +1,6 @@
 # Django sample server
 
-REST API: Django server <---> Java, JavaScript and PhoneGap client
+REST API: Django server <---> Java, JavaScript (jQuery, Angular) and PhoneGap client
 
 #### Django REST/JSON server with OAuth2
 
@@ -9,6 +9,10 @@ REST API: Django server <---> Java, JavaScript and PhoneGap client
 #### Java REST/JSON client with OAuth2
 
 [see client/java/](client/java/)
+
+#### JavaScript AngularJS REST/JSON client with OAuth2 and Bootstrap UI
+
+[see client/js_angular/](client/js_angular/)
 
 #### JavaScript jQuery REST/JSON client with OAuth2 (and jQueryMobile UI)
 
