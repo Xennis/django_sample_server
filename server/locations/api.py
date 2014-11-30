@@ -29,8 +29,8 @@ class LocationResource(ModelResource):
 #       detail_allowed_methods = [ 'get', 'delete' ]
 #       default_format = "application/json"
 #       always_return_data = True
-        authorization = DjangoAuthorization()
-        authentication = OAuth20Authentication()
+#        authorization = DjangoAuthorization()
+#        authentication = OAuth20Authentication()
 
     def obj_create(self, bundle, request=None, **kwargs):
         user = User.objects.get(id=bundle.data['user_id'])

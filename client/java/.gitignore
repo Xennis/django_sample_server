@@ -6,15 +6,6 @@
 *.class
 
 ############
-## Eclipse
-############
-
-.settings/
-.project
-.classpath
-bin/
-
-############
 ## Custom
 ############
 

@@ -1,0 +1,14 @@
+############
+## Eclipse
+############
+
+.settings/
+.project
+.classpath
+bin/
+
+############
+## NetBeans
+############
+ 
+nbproject/
