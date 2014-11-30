@@ -4,9 +4,9 @@
 
 ### Used software
 
-Used JavaScript library
+Used JavaScript libraries
 
-* [jQuery](http://jquery.com/download/) (v.1.10.2)
+* [jQuery](http://jquery.com/) (v.1.10.2)
 * (Optional) [jQuery Mobile](http://jquerymobile.com/) (v.1.4)
 
 

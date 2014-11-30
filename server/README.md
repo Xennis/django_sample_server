@@ -50,7 +50,8 @@ python manage.py shell
  >>> c.client_id
 'd63f53a7a6cceba04db5'
  >>> c.client_secret
-'afe899288b9ac4127d57f2f12ac5a49d839364dc' 
+'afe899288b9ac4127d57f2f12ac5a49d839364dc'
+ >>> exit()
 ```
 
 Get access token
