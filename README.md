@@ -12,7 +12,7 @@ REST API: Django server <---> Java, JavaScript and PhoneGap client
 
 #### JavaScript jQuery REST/JSON client with OAuth2 (and jQueryMobile UI)
 
-[see client/js_html/](client/js_html/)
+[see client/js_jquery/](client/js_jquery/)
 
 #### PhoneGap REST/JSON client with jQuery (Mobile) and OAuth2
 
