@@ -23,9 +23,9 @@
 		<h3>Post location</h3>
 
 		<form ng-submit="postLocation()">
-			<input type="number" ng-model="postLatitude" placeholder="Latitude" class="form-group form-control" required>
-			<input type="number" ng-model="postLongitude" placeholder="Longitude" class="form-group form-control" required>
-			<input type="number" ng-model="postAltitude" placeholder="Altitude" class="form-group form-control" required>
+			<input type="number" ng-model="location.latitude" placeholder="Latitude" class="form-group form-control" required>
+			<input type="number" ng-model="location.longitude" placeholder="Longitude" class="form-group form-control" required>
+			<input type="number" ng-model="location.altitude" placeholder="Altitude" class="form-group form-control" required>
 			<input type="submit" value=" Post location" class="btn btn-success glyphicon glyphicon-ok">
 		</form>
 

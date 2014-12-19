@@ -2,6 +2,7 @@
 	var app = angular.module('exampleApp', ['HttpClient']);
 
 	app.controller('SampleAPIController', ['$scope', 'httpClient', function($scope, httpClient){
+
 		$scope.API_URL = "http://localhost:8000/api/v1/";
 		
 		$scope.access_token = "33faa76c33b5f6fdef888fda0ca379a5deecc739";
@@ -9,9 +10,9 @@
 		$scope.postLocation = function() {
 			var location = JSON.stringify({
 				user_id: 10,
-				latitude: $scope.postLatitude,
-				longitude: $scope.postLongitude,
-				altitude: $scope.postAltitude
+				latitude: $scope.location.latitude,
+				longitude: $scope.location.longitude,
+				altitude: $scope.location.altitude
 			});
 
 			httpClient.httpPost($scope.API_URL + 'location/', 'OAuth ' + $scope.access_token, location,
