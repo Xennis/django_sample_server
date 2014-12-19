@@ -1,0 +1,87 @@
+[
+{
+    "pk": 10, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "exampleUser", 
+        "first_name": "Bart", 
+        "last_name": "Simpson", 
+        "is_active": true, 
+        "is_superuser": false, 
+        "is_staff": false, 
+        "last_login": "2014-11-29T23:16:28Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "password", 
+        "email": "bart@example.org", 
+        "date_joined": "2014-11-29T23:16:28Z"
+    }
+},
+{
+    "pk": 10, 
+    "model": "oauth2.client", 
+    "fields": {
+        "name": "exampleClient", 
+        "url": "http://exampple.com", 
+        "client_type": 1, 
+        "redirect_uri": "", 
+        "user": 10, 
+        "client_id": "75f1f0770554cf13c394", 
+        "client_secret": "6e76104b3f9caba6ce0c8b78834a9c9ee433af70"
+    }
+},
+{
+    "pk": 10, 
+    "model": "oauth2.accesstoken", 
+    "fields": {
+        "scope": 6, 
+        "token": "33faa76c33b5f6fdef888fda0ca379a5deecc739", 
+        "client": 10, 
+        "user": 10, 
+        "expires": "2016-11-30T17:17:39.991Z"
+    }
+},
+{
+    "pk": 10, 
+    "model": "oauth2.refreshtoken", 
+    "fields": {
+        "access_token": 10, 
+        "token": "582418e5102df4c8e8218fbd2df178603a484f01", 
+        "client": 10, 
+        "expired": false, 
+        "user": 10
+    }
+},
+{
+    "pk": 10, 
+    "model": "locations.user", 
+    "fields": {
+        "user_permissions": [], 
+        "date_of_birth": "1984-11-30", 
+        "groups": [], 
+        "language": "en"
+    }
+},
+{
+    "model": "locations.location", 
+    "fields": {
+        "latitude": 43.0,
+        "longitude": 32.0, 
+        "altitude": 100.0, 
+        "user": 10, 
+        "updated": "2014-11-30T17:20:59.763Z", 
+        "created": "2014-11-30T17:20:59.762Z"
+    }
+},
+{
+    "model": "locations.location", 
+    "fields": {
+        "latitude": -24.0,
+        "longitude": 23.0, 
+        "altitude": 321.0,
+        "user": 10, 
+        "created": "2014-11-30T17:25:05.761Z", 
+        "updated": "2014-11-30T17:25:05.761Z"
+    }
+}
+]

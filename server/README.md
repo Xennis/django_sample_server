@@ -18,7 +18,7 @@ Used files
 
 ### Run
 
-1. Create database tables and a superuser `python manage.py syncdb`
+1. Create database tables with [sample data](initial_data.json) and a superuser `python manage.py syncdb`
 
 2. Run server `python manage.py runserver`
 
@@ -26,9 +26,7 @@ Used files
 
     API: [http://localhost:8000/api/v1/](http://localhost:8000/api/v1/)
 
-3. Create sample data
-
-4. Run one of the [clients](../client/)
+3. Run one of the [clients](../client/)
 
 
 ## Notes
