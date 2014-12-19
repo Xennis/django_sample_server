@@ -2,7 +2,7 @@ var SampleAPI = function() {
 
   var API_URL = "http://localhost:8000/api/v1/";
 
-  var access_token = "f0d56e559cca7bc5c977e3c53f332f5967e722f8";
+  var access_token = "33faa76c33b5f6fdef888fda0ca379a5deecc739";
 
   var client = new HttpClient();
 

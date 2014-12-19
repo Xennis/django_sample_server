@@ -15,7 +15,7 @@ public class Main {
 		}
 
 		System.out.println("----------------- Post location -----------------");
-		int sampleUser_id = 3;
+		int sampleUser_id = 10;
 		Location sampleLocation = new Location(55, 12, 110, sampleUser_id);
 		boolean postResult = sampleAPI.postLocation(sampleLocation);
 		if (postResult) {

@@ -22,7 +22,7 @@ public class SampleAPI {
 	/**
 	 * API access token.
 	 */
-	private static final String ACCESS_TOKEN = "f0d56e559cca7bc5c977e3c53f332f5967e722f8";
+	private static final String ACCESS_TOKEN = "33faa76c33b5f6fdef888fda0ca379a5deecc739";
 
 	
 	/**

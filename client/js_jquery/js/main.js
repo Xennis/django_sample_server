@@ -17,7 +17,7 @@ $(document).ready(function() {
     var $form = $(this);
 
     var location = JSON.stringify({
-        user_id: 3,
+        user_id: 10,
         latitude: $form.find( "input[name='latitude']" ).val(),
         longitude: $form.find( "input[name='longitude']" ).val(),
         altitude: $form.find( "input[name='altitude']" ).val(),
