@@ -6,9 +6,10 @@
 
 Used JavaScript library
 
-* [AngularJS](http://angularjs.org) (1.2.27)
+* [AngularJS](http://angularjs.org) (1.3.3)
 
 Used CSS library
+
 * [Bootstrap](http://getbootstrap.com/) (3.3.1)
 
 ### Run
